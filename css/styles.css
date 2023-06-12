@@ -1,0 +1,128 @@
+/* Reset */
+*,
+*::before,
+*::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+input,
+button{
+    font: inherit;
+}
+
+img{
+    max-width: 100%;
+    display: block;
+}
+
+:root{
+    --clr-primary: 0 100% 100%;
+    --clr-secondary: 0 0% 30%;
+    --clr-accent: 200 50% 50%;
+
+    --fs-400: 1.125rem;
+
+    --fw-normal: normal;
+
+    --ff-body: cursive;
+}
+
+/* Utility classes */
+.bg-primary{
+    background-color: hsl(var(--clr-primary));
+}
+
+.bg-secondary{
+    background-color: hsl(var(--clr-secondary));
+}
+
+.text-secondary{
+    color: hsl(var(--clr-secondary));
+}
+
+.fs-400{
+    font-size: var(--fs-400);
+}
+
+.fw-normal{
+    font-weight: var(--fw-normal);
+}
+
+.ff-body{
+    font-family: var(--ff-body);
+}
+
+.grid{
+    display: grid;
+}
+
+.flex{
+    display: flex;
+}
+
+.wrapper{
+    max-width: 45em;
+    margin-inline: auto;
+    padding-inline: 2.5rem;
+}
+
+/* Components */
+body{
+    min-height: 100vh;
+    min-height: 100dvh;
+    place-items: center;
+}
+
+.main{
+    width: 100%;
+}
+
+.form{
+    --_button-padding: ;
+    --_button-width: 2.5rem;
+
+    height: var(--_button-width);
+    border: 2px solid hsl(var(--clr-accent));
+    border-radius: 100vmax;
+    overflow: hidden;
+    position: relative;
+    width: var(--_button-width);
+    transition: width 350ms;
+}
+
+.form:focus-within{
+    width: 100%;
+    height: auto;
+}
+
+.form:focus-within .form__search-input{
+    opacity: 1;
+}
+
+.form__search-input{
+    border: 0;
+    width: 100%;
+    padding: .5rem 1rem;
+    position: absolute;
+    opacity: 0;
+    transition: opacity 350ms;
+    background-color: transparent;
+}
+
+.form__search-input:focus{
+    outline-color: transparent;
+}
+
+.form__search-button{
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 0;
+    cursor: pointer;
+    margin-inline-start: auto;
+    overflow: hidden;
+    width: var(--_button-width);
+    padding: .125rem;
+    background-color: transparent;
+}
